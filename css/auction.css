@@ -1,0 +1,279 @@
+
+body {
+  background: #3E4649;
+  color: #f7f7f7;
+  font-family: 'Montserrat', sans-serif;
+}
+
+button:hover{
+  opacity: 0.6;
+}
+
+#titleSection{
+  padding-left: 15px;
+}
+
+.navbar-inverse {
+    background: #2E2F31;
+    border: 0;
+}
+
+.navbar-inverse .navbar-nav li a {
+    color: #f7f7f7;
+    font-size: 16px;
+}
+
+.navbar-inverse .navbar-nav li a:hover {
+    background: #4B9CD3;
+}
+
+
+.popover{
+    background: black;
+}
+
+#sortItems button{
+  color: black;
+  padding: 8px;
+  background: solid white;
+}
+
+#sortItems{
+  padding-bottom: 15px;
+  padding-left: 15px;
+}
+
+#itemSearch input{
+  color: black;
+  width: 400px;
+}
+
+#itemSearch{
+  padding-left: 15px;
+  padding-bottom: 15px;
+}
+
+#itemList{
+  padding-bottom: 15px;
+}
+
+.itemsTable {
+    border-collapse: collapse;
+    table-layout: fixed;
+    border-color:#bababb;
+}
+
+.itemsTable tr > td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 10px;
+}
+
+.itemsTable tr:nth-child(even) {
+    background-color: #2b3033;
+}
+
+.itemsTable tr > td > button{
+  background-color: black;
+  border: 1px solid white;
+}
+
+table.itemsTable tbody, table.itemsTable thead { 
+  display: block;
+}
+
+table.itemsTable tbody {
+    height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.itemsTable td{
+  
+}
+
+.itemsTable tr:hover{
+  opacity: 0.8;
+}
+
+.selected{
+  color: red;
+}
+
+
+
+.jumbotron{
+  background: #4B9CD3;
+  color: white;
+  text-align: center;
+}
+
+.jumbotron p {
+  color: white;
+  font-size: 26px;
+}
+
+img{
+  max-height: 100px;
+}
+
+h1, h2{
+  font-weight: bold;
+}
+
+h3{
+  font-family: arial, sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.scrollbar
+{
+  margin-left: 30px;
+  float: left;
+  height: 300px;
+  width: 65px;
+  background: #F5F5F5;
+  overflow-y: scroll;
+  margin-bottom: 25px;
+}
+
+
+#content {
+  display: none;
+}
+
+#buyerinfo{
+    width: 100%;
+    padding: 5px 0;
+    text-align: center;
+    margin-top: 5px;
+}
+
+#sellerButton{
+  text-align: center;
+}
+
+#sellerButton h1{
+  color: white;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+#sellerButton{
+  padding: 8px;
+  color: black;
+}
+
+#sellerinfo {
+    width: 450px;
+    padding: 30px 0;
+    margin: 40px auto;
+    text-align: center;
+    margin-top: 5px;
+    border: 1px solid white;
+    padding: 20px;
+}
+
+#sellerinfo .inner-section{
+    padding: 30px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+#sellerinfo > form > div > label > input{
+  color: black;
+}
+
+#sellerinfo > form > div > label > select{
+  color: black;
+}
+
+#sellerinfo label{
+    display: block;
+    margin-bottom: 15px;
+}
+
+#sellerinfo input[type="text"]{
+  display: block;
+  width: 100%;
+  padding: 16px;
+  border-radius: 6px;
+
+}
+
+#sellerinfo .section{
+    color: yellow;
+    margin-bottom: 5px;
+}
+
+
+#sellerinfo input[type="submit"]{
+    background: black;
+    padding: 8px 20px 8px 20px;
+    border-radius: 5px;
+    border: 1px solid white;
+    font-size: 15px;
+}
+
+#sellerinfo input[type="submit"]:hover{
+   opacity: 0.8;
+}
+
+.bidButton{
+  padding-top: 15px;
+  padding-left: 20px;
+}
+
+.bidButton input{
+  color: black;
+}
+
+
+.userButton{
+  text-align: center;
+  border-bottom: 3px solid white;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.userButton button{
+  color:black;
+  padding: 8px;
+
+}
+
+#new_user, #existing_user{
+  padding: 15px;
+}
+
+
+#new_user > label > input{
+  color:black;
+}
+
+#new_user > button{
+  color: black;
+  padding: 15px;
+}
+
+#existing_user > form > label > input{
+  color:black;
+}
+
+#accountSubmitButton{
+  color: black;
+}
+
+#loginSubmitButton{
+  color: black;
+}
+
+
+
+
+
+/*input { 
+  width: 200px; 
+  border: 1px solid #000; 
+  padding: 5px; 
+}*/
