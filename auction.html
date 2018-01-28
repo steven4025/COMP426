@@ -1,0 +1,493 @@
+<?php session_start(); ?>
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="auctionSite" content="width=device-width, initial-scale=1.0">
+<title>UNC-Bay</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/auction.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700'
+	rel='stylesheet' type='text/css'>
+<script src="jquery-3.2.1.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/tether.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="submit_form.js"></script>
+<script src="bid_form.js"></script>
+</head>
+
+<body>
+
+	<script>
+		$(document).ready(function() {
+			$('[data-toggle="popover"]').popover();
+			$('#sellerinfo').hide();
+		});
+	</script>
+
+
+	<nav class="navbar navbar-inverse navbar-static-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="auction.html">UNC-bay</a>
+			</div>
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="accountCreation.html"> <?php if(isset($_SESSION['username'])){echo $_SESSION['username'];}else{ echo "Login";} ?></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="jumbotron">
+		<div class="container">
+			<h1>UNC-Bay</h1>
+			<p>It's like eBay, but worse.</p>
+		</div>
+	</div>
+
+	<div id="titleSection">
+		<h2>Current Listings:</h2>
+	</div>
+	<!--
+	<h3>Sort by:</h3>
+	<select id="categorySelect">
+		<option value="electronics">Electronics</option>
+		<option value="sellerid">Health</option>
+		<option value="category">School/Work</option>
+		<option value="price">Clothing/Fashion</option>
+		<option value="price">Art</option>
+		<option value="price">Home</option>
+		<option value="price">Sporting Goods</option>
+		<option value="price">Toys/Hobbies</option>
+		<option value="price">Other</option>
+	</select>
+	!-->
+	<div id="sortItems">
+		<p>Click a button below for how you'd like to sort the items:</p>
+
+		<button onclick="sortTableName()">Item Name</button>
+		<button onclick="sortCategory()">Item Category</button>
+		<button onclick="sortBid()">Current Bid</button>
+		<button onclick="sortDate()">Date</button>
+
+	</div>
+
+
+
+	<script>
+		function sortTableName() {
+			var table, rows, switching, i, x, y, shouldSwitch;
+			table = document.getElementById("table1");
+			switching = true;
+			while (switching) {
+				switching = false;
+				rows = table.getElementsByTagName("TR");
+				for (i = 1; i < (rows.length - 1); i++) {
+					shouldSwitch = false;
+					x = rows[i].getElementsByTagName("TD")[1];
+					y = rows[i + 1].getElementsByTagName("TD")[1];
+					if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+						shouldSwitch = true;
+						break;
+					}
+				}
+				if (shouldSwitch) {
+					rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+					switching = true;
+				}
+			}
+		}
+	</script>
+
+	<script>
+		function sortCategory() {
+			var table, rows, switching, i, x, y, shouldSwitch;
+			table = document.getElementById("table1");
+			switching = true;
+			while (switching) {
+				switching = false;
+				rows = table.getElementsByTagName("TR");
+				for (i = 1; i < (rows.length - 1); i++) {
+					shouldSwitch = false;
+					x = rows[i].getElementsByTagName("TD")[2];
+					y = rows[i + 1].getElementsByTagName("TD")[2];
+					if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+						shouldSwitch = true;
+						break;
+					}
+				}
+				if (shouldSwitch) {
+					rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+					switching = true;
+				}
+			}
+		}
+	</script>
+
+	<script>
+		function sortBid() {
+			var table, rows, switching, i, x, y, shouldSwitch;
+			table = document.getElementById("table1");
+			switching = true;
+			while (switching) {
+				switching = false;
+				rows = table.getElementsByTagName("TR");
+				for (i = 1; i < (rows.length - 1); i++) {
+					shouldSwitch = false;
+					x = rows[i].getElementsByTagName("TD")[3];
+					y = rows[i + 1].getElementsByTagName("TD")[3];
+					if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+						shouldSwitch = true;
+						break;
+					}
+				}
+				if (shouldSwitch) {
+					rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+					switching = true;
+				}
+			}
+		}
+	</script>
+
+	<script>
+		function sortDate() {
+			var table, rows, switching, i, x, y, shouldSwitch;
+			table = document.getElementById("table1");
+			switching = true;
+			while (switching) {
+				switching = false;
+				rows = table.getElementsByTagName("TR");
+				for (i = 1; i < (rows.length - 1); i++) {
+					shouldSwitch = false;
+					x = rows[i].getElementsByTagName("TD")[4];
+					y = rows[i + 1].getElementsByTagName("TD")[4];
+					if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+						shouldSwitch = true;
+						break;
+					}
+				}
+				if (shouldSwitch) {
+					rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+					switching = true;
+				}
+			}
+		}
+	</script>
+
+
+	<script>
+		// matches thead size with body
+		$(document).ready(
+				function() {
+					var $table = $('table.itemsTable'), $bodyCells = $table
+							.find('tbody tr:first').children(), colWidth;
+
+					$(window).resize(function() {
+						colWidth = $bodyCells.map(function() {
+							return $(this).width();
+						}).get();
+
+						$table.find('thead tr').children().each(function(i, v) {
+							$(v).width(colWidth[i]);
+						});
+					}).resize();
+				});
+	</script>
+
+
+	<div id="itemSearch">
+
+		<input type="text" id="item_name" onkeyup="searchItem()"
+			placeholder="Search for an item..." title="Search for an item">
+		<div id="itemList"></div>
+
+	</div>
+
+	<script>
+		$(document).ready(function() {
+			$('#item_name').keyup(function() {
+				var query = $(this).val();
+				if (query != '') {
+					$.ajax({
+						url : "autocomp.php",
+						method : "POST",
+						data : {
+							query : query
+						},
+						success : function(data) {
+							$('#itemList').fadeIn();
+							$('#itemList').html(data);
+						}
+					});
+				}
+			});
+			$(document).on('click', 'li', function() {
+				$('#item_name').val($(this).text());
+				$('#itemList').fadeOut();
+			});
+		});
+	</script>
+
+	<script>
+		function searchItem() {
+			var td, td2, i;
+			var input = document.getElementById("item_name");
+			var filter = input.value.toUpperCase();
+			var table = document.getElementById("table1");
+			var tr = table.getElementsByTagName("tr");
+			for (i = 0; i < tr.length; i++) {
+				td = tr[i].getElementsByTagName("td")[1];
+				td2 = tr[i].getElementsByTagName("td")[3];
+				if (td || td2) {
+					if (td.innerHTML.toUpperCase().indexOf(filter) > -1
+							|| td2.innerHTML.toUpperCase().indexOf(filter) > -1) {
+						tr[i].style.display = "";
+					} else {
+						tr[i].style.display = "none";
+					}
+				}
+			}
+		}
+	</script>
+
+
+
+
+	<table class="itemsTable" id="table1">
+		<thead>
+			<tr>
+				<th>&nbsp;</th>
+				<th>Item</th>
+				<th>Category</th>
+				<th>Current Bid</th>
+				<th>End Date</th>
+			</tr>
+		</thead>
+
+		<tbody id="allitems">
+			<?php
+				$username = "sjs4025";
+				$password = "*******";
+				$server = "classroom.cs.unc.edu";
+				$database = "sjs4025db";
+		
+				$conn = new mysqli($server, $username, $password, $database);
+				if ($conn->connect_error) {
+						die("Connection failed: " . $conn->connect_error);
+				}else{echo "connected";}
+				echo "hello";
+				$result_sql = "SELECT I.id as id, I.name as itemname, C.name as categoryname, MAX(B.bid_price) as bidprice, I.exp_date as expiration, I.description 
+							   FROM Bid B, Category C, Item I 
+							   WHERE C.id = I.category_id AND B.item_id = I.id
+							   GROUP BY I.id, I.name, C.name, I.exp_date, I.description
+							   ORDER BY COUNT(B.bid_price)";
+				$result = mysqli_query($conn, $result_sql);
+				$numrows = mysqli_num_rows($result);
+				if($numrows >0){echo "success"; echo($numrows);}else{echo "no rows";}
+				if(isset($result)){echo "should be result";}else{echo "no result"; echo mysqli_connect_error();}
+				$count = 0;
+				while($row = mysqli_fetch_row($result)){
+					echo "<tr id="; 
+					echo ($row[0]); 
+					echo ">";
+					echo "<td>
+							<button type='button' class='btn btn-secondary'
+								data-container='body' data-toggle='popover' data-placement='right'
+								data-content=$row[5]>
+								Item Description</button>
+						</td>";
+					echo "<td>
+							$row[1]
+						</td>
+						<td>
+							$row[2]
+						</td>
+						<td>
+							$row[3]
+						</td>
+						<td>
+							$row[4]
+						</td>";
+					echo "</tr>";		
+				}
+				?>
+		</tbody>
+	</table>
+
+
+
+	<script>
+		function highlight_row() {
+			var table = document.getElementById('table1');
+			var cells = table.getElementsByTagName('td');
+
+			for (var i = 0; i < cells.length; i++) {
+				// Take each cell
+				var cell = cells[i];
+				// do something on onclick event for cell
+				cell.onclick = function() {
+
+					// Get the row id where the cell exists
+					var rowId = this.parentNode.rowIndex;
+
+					var rowsNotSelected = table.getElementsByTagName('tr');
+					for (var row = 0; row < rowsNotSelected.length; row++) {
+						rowsNotSelected[row].style.backgroundColor = "";
+						rowsNotSelected[row].classList.remove('selected');
+					}
+					var rowSelected = table.getElementsByTagName('tr')[rowId];
+					rowSelected.style.backgroundColor = "#ffff66";
+					rowSelected.className += " selected";
+					var itemID = rowSelected.id;
+					document.getElementById('bidItem').value = itemID;
+					document
+							.getElementById('bidAmount')
+							.setAttribute(
+									"min",
+									rowSelected.getElementsByTagName("td")[4].innerHTML);
+
+				}
+			}
+		} //end of function
+
+		window.onload = highlight_row;
+	</script>
+
+
+
+	<div class="bidButton">
+		<form method="post">
+			Bid: <input type="number" id="bidAmount" name="bidAmount" step="0.01"
+				min="0"> <input type="hidden" id="bidItem" name="bidItem"
+				value="1"> <input type="submit" value="Submit Bid"
+				id="submitbid">
+		</form>
+	</div>
+
+	<!--
+	<div class="container" style="width: 500px;">
+		<h3>Search for Item</h3>
+		<label>Enter Item Name</label> <input type="text" name="itemauto"
+			id="item_name" class="form-control" placeholder="Enter Item Name" />
+		<div id="itemList"></div>
+	</div>
+
+	<script>
+		$(document).ready(function() {
+			$('#item_name').keyup(function() {
+				var query = $(this).val();
+				if (query != '') {
+					$.ajax({
+						url : "autocomp.php",
+						method : "POST",
+						data : {
+							query : query
+						},
+						success : function(data) {
+							$('#itemList').fadeIn();
+							$('#itemList').html(data);
+						}
+					});
+				}
+			});
+			$(document).on('click', 'li', function() {
+				$('#item_name').val($(this).text());
+				$('#itemList').fadeOut();
+			});
+		});
+	</script>
+
+	!-->
+
+	<div id="sellerButton">
+		<h1>Want to submit an item for sale?</h1>
+		<button onclick="revealSeller()">Submit an Item</button>
+	</div>
+
+	<script>
+		function revealSeller() {
+			var x = document.getElementById("sellerinfo");
+			if (x.style.display === "none") {
+				x.style.display = "block";
+			} else {
+				x.style.display = "none";
+			}
+		}
+	</script>
+
+	<div id="sellerinfo">
+		<h1>Sell an Item!</h1>
+		<span>Fill out the boxes below to submit your item for bidding!</span>
+		<form id="submitform" method="post">
+			<div class="section">Item Info</div>
+			<div class="inner-secton">
+				<label for="itemname"> Item Name<br> <input type="text"
+					name="itemname" id="itemname">
+				</label><br> <label for="itemdescription"> Item Description<br>
+					<input type="text" name="itemdescription" id="itemdescription">
+				</label><br> <label for="startingprice"> Starting Price ($)<br>
+					<input type="text" name="startingprice" id="startingprice"
+					placeholder="0.00">
+				</label><br> <label for="itemcategory"> Category<br> <select
+					name="itemcategory" id="itemcategory">
+						<option value="electronics">Electronics</option>
+						<option value="health">Health</option>
+						<option value="school">School/Work</option>
+						<option value="clothing">Clothing/Fashion</option>
+						<option value="art">Art</option>
+						<option value="home">Home</option>
+						<option value="sporting">Sporting Goods</option>
+						<option value="toys">Toys/Hobbies</option>
+						<option value="other">Other</option>
+				</select>
+				</label><br> <label for="expirationdate"> Expiration Date<br>
+					<input type="date" name="expirationdate" id="expirationdate">
+				</label>
+			</div>
+			<br> <input type="submit" value="Submit" id="submitItem">
+		</form>
+
+		<p>Clicking submit will submit your item!</p>
+
+	</div>
+	<script>
+		$(document).ready(
+				function() {
+					var today = new Date();
+					var dd = today.getDate();
+					var mm = today.getMonth() + 1; //January is 0!
+					var yyyy = today.getFullYear();
+					if (dd < 10) {
+						dd = '0' + dd
+					}
+					if (mm < 10) {
+						mm = '0' + mm
+					}
+					today = yyyy + '-' + mm + '-' + dd;
+					document.getElementById("expirationdate").setAttribute(
+							"min", today);
+				});
+	</script>
+	<script>
+		$("#sellerButton").click(function() {
+			$('html,body').animate({
+				scrollTop : $("#sellerinfo").offset().top
+			}, 'slow');
+		});
+	</script>
+
+</body>
+</html>

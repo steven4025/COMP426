@@ -1,0 +1,234 @@
+
+#itemsTable {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+    min-width: 400px;
+    border-color:#bababb;
+}
+
+#itemsTable tr > td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+#itemsTable tr:nth-child(even) {
+    background-color: #D0D3D4;
+}
+
+#headerSection h1{
+  font-family: arial, sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+img{
+  max-height: 100px;
+}
+
+h2{
+  font-family: arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600; 
+}
+
+h3{
+  font-family: arial, sans-serif;
+  font-size: 12px;
+  font-weight: 200;
+}
+
+h5{
+
+}
+
+
+h6{
+  
+}
+
+#content {
+  display: none;
+}
+
+#allitems{
+
+}
+
+#buyerinfo{
+    width: 100%;
+    padding: 5px 0;
+    text-align: center;
+    margin-top: 5px;
+}
+
+#sellerinfo {
+    width: 450px;
+    padding: 30px 0;
+    margin: 40px auto;
+    text-align: center;
+    margin-top: 5px;
+    background: #FFF;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+}
+
+#sellerinfo .inner-section{
+    padding: 30px;
+    background: #F8F8F8;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+#sellerinfo h1 {
+  background: #2A88AD;
+  padding: 20px 30px 15px 30px;
+  border-radius: 10px 10px 0 0;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.12);
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  border: 1px solid #257C9E;
+  color: #fff;
+  box-shadow: inset 0px 2px 4px 6px;
+}
+
+#sellerinfo h1 > span{
+    display: block;
+    margin-top: 2px;
+    font: 13px Arial, Helvetica, sans-serif;
+}
+
+#sellerinfo label{
+    display: block;
+    font: 13px Arial, Helvetica, sans-serif;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+#sellerinfo input[type="text"]{
+  display: block;
+  width: 100%;
+  padding: 16px;
+  border-radius: 6px;
+
+}
+
+#sellerinfo .section{
+    font: normal 20px 'Bitter', serif;
+    color: #2A88AD;
+    margin-bottom: 5px;
+}
+
+#sellerinfo .section span {
+    background: #2A88AD;
+    padding: 5px 10px 5px 10px;
+    position: absolute;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border: 4px solid #fff;
+    font-size: 14px;
+    margin-left: -45px;
+    color: #fff;
+    margin-top: -3px;
+}
+
+#sellerinfo input[type="submit"]{
+  background: #2A88AD;
+    padding: 8px 20px 8px 20px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+    font: normal 30px 'Bitter', serif;
+    -moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    -webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    border: 1px solid #257C9E;
+    font-size: 15px;
+}
+
+#sellerinfo input[type="submit"]:hover{
+   opacity: 0.8;
+}
+
+.login_container{
+  padding: 12px;
+}
+
+.login_container .imgcontainer{
+    text-align: center;
+    margin: 30px 0 12px 0;
+}
+
+.login_container button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.modal {
+    display: none;
+    position: fixed; 
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 40px;
+}
+
+.modal-form {
+    background-color: #fefefe;
+    margin: 5px auto;
+    border: 1px solid #888;
+    width: 65%; /* Could be more or less, depending on screen size */
+}
+
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+.imgcontainer img{
+  display: block;
+  margin: 0 auto;
+    width: 50%;
+}
+
+.input-icon {
+  position: relative;
+}
+
+.input-icon > i {
+  position: absolute;
+  display: block;
+  transform: translate(0, -50%);
+  top: 0%;
+  width: 20px;
+  text-align: center;
+  font-style: normal;
+}
+
+.input-icon > input {
+  padding-left: 35px;
+  padding-right: 0;
+}
+
+
+/*input { 
+  width: 200px; 
+  border: 1px solid #000; 
+  padding: 5px; 
+}*/
